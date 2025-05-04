@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oasis Ventures LLC - Your Trusted Land Acquisition Partner</title>
+    <style>
+        :root {
+            --primary: #2e7d32;
+            --secondary: #1b5e20;
+            --accent: #81c784;
+            --light: #f1f8e9;
+            --dark: #333;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #fff;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+        <!--     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/api/placeholder/1200/600'); -->
+			background-image: src="images/Screenshot2025-04-30-110647.png";
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            color: white;
+            margin-top: 80px;
+        }
+        
+        .hero-content {
+            max-width: 700px;
+            padding: 20px;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* About Section */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            font-size: 36px;
+            text-align: center;
+            margin-bottom: 60px;
+            color: var(--primary);
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .about-image {
+            flex: 1;
+            max-width: 500px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--secondary);
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: var(--light);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-image {
+            height: 200px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: var(--primary);
+        }
+        
+        .service-content {
+            padding: 30px;
+        }
+        
+        .service-content h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        /* Process Section */
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .step {
+            flex: 1;
+            min-width: 200px;
+            text-align: center;
+            padding: 0 20px;
+            margin-bottom: 30px;
+        }
+        
+        .step-number {
+            background-color: var(--primary);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        .step h3 {
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background-color: var(--light);
+        }
+        
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            font-weight: bold;
+            color: var(--secondary);
+        }
+        
+        /* Contact Section */
+        .contact-form {
+            max-width: 700px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            outline: none;
+        }
+        
+        textarea.form-control {
+            resize: vertical;
+            min-height: 150px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-links h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links ul li a:hover {
+            color: white;
+        }
+        
+        .contact-info p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--accent);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                margin-bottom: 30px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                font-size: 30px;
+                margin-bottom: 40px;
+            }
+        }
+        
+        /* Success Message */
+        .success-message {
+            display: none;
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">Oasis <span>Ventures</span></a>
+                <button class="mobile-menu-btn">☰</button>
+                <nav>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#process">Our Process</a></li>
+                        <li><a href="#testimonials">Success Stories</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Strategic Land Acquisition Advisors</h1>
+                <p>Oasis Ventures LLC empowers your property search with specialized knowledge and independent guidance. As dedicated consultants, we help you evaluate potential land investments, identify hidden risks, and secure properties that align with your long-term objectives.</p>
+                <a href="#contact" class="btn">Get Started Today</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Announcement Banner -->
+    <div style="background-color: var(--secondary); color: white; text-align: center; padding: 15px;">
+        <div class="container">
+            <strong>NOTE:</strong> Oasis Ventures LLC offers advisory services exclusively. We are not realtors, brokers, or land sellers. Our mission is to provide objective analysis and guidance throughout your land acquisition journey.
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Oasis Ventures</h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <img src="/api/placeholder/500/400" alt="Beautiful land property">
+                </div>
+                <div class="about-text">
+                    <h3>Objective Analysis for Smart Land Decisions</h3>
+                    <p>Finding and purchasing the right plot of land involves numerous complexities and potential risks that aren't immediately obvious. Zoning restrictions, access problems, water rights issues, and environmental concerns can transform what seems like a perfect property into a costly mistake.</p>
+                    <p><strong>As independent advisors with no financial stake in your purchase</strong>, Oasis Ventures delivers thorough analysis and honest recommendations. Our team combines decades of experience with local market knowledge to help you evaluate properties objectively, negotiate effectively, and protect your investment.</p>
+                    <p>We focus exclusively on your priorities and objectives. By conducting comprehensive property assessments, reviewing documentation, and investigating potential limitations, we help you avoid the expensive pitfalls that often trap unprepared buyers. Think of us as your personal land acquisition team, committed solely to your best interests.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services">
+        <div class="container">
+            <h2 class="section-title">Our Advisory Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">🔍</div>
+                    <div class="service-content">
+                        <h3>Property Evaluation</h3>
+                        <p>We analyze potential properties against your specific criteria, examining factors beyond the listing description. Our comprehensive evaluation helps you focus on parcels that truly meet your requirements before investing time in site visits.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">📋</div>
+                    <div class="service-content">
+                        <h3>Risk Assessment</h3>
+                        <p>Every property has hidden challenges. We identify regulatory constraints, environmental liabilities, access issues, and title problems that might not be obvious during initial inspection but could severely impact your ownership experience.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">💰</div>
+                    <div class="service-content">
+                        <h3>Investment Analysis</h3>
+                        <p>We provide data-driven insights into fair market value, development costs, and potential returns. Our proprietary methodology helps you understand when a property represents good value and when the asking price exceeds realistic worth.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">📝</div>
+                    <div class="service-content">
+                        <h3>Strategic Representation</h3>
+                        <p>With our advisors by your side, you gain experienced representation during the entire acquisition process. We help structure offers, negotiate terms, review documentation, and coordinate with other professionals to protect your interests.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">🏗️</div>
+                    <div class="service-content">
+                        <h3>Feasibility Studies</h3>
+                        <p>Before committing to a purchase, understand exactly what's possible. Our detailed feasibility assessments examine your intended use against local regulations, physical characteristics, and infrastructure availability to confirm viability.</p>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-image">🌱</div>
+                    <div class="service-content">
+                        <h3>Resource Evaluation</h3>
+                        <p>Land often contains valuable but overlooked resources. We examine water availability, soil quality, mineral rights, timber values, conservation opportunities, and other potential benefits that add significant value to your investment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="section">
+        <div class="container">
+            <h2 class="section-title">Our Client-Centered Approach</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Strategy Session</h3>
+                    <p>We start by understanding your vision, priorities, and parameters through a comprehensive consultation that defines what success looks like for your specific situation.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Market Analysis</h3>
+                    <p>Our team researches regional trends, pricing patterns, and availability to provide context for your search and establish realistic expectations in your desired area.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Property Validation</h3>
+                    <p>When you identify potential properties, we perform thorough evaluations of each option, investigating documentation, physical characteristics, and regulatory constraints.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Strategic Guidance</h3>
+                    <p>We provide objective recommendations, help formulate offers, and represent your interests throughout negotiations, inspections, and contract phases.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>Implementation Planning</h3>
+                    <p>After purchase, we help you develop a roadmap for realizing your goals, connecting you with qualified professionals for the next phase of your land journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="section testimonials">
+        <div class="container">
+            <h2 class="section-title">Success Stories</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Working with Oasis Ventures completely transformed our land buying experience. Their detailed analysis uncovered a serious easement issue that could have devastated our building plans. Their expertise saved us from making a six-figure mistake."</p>
+                    <p class="testimonial-author">- James W., Arizona</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"I was overwhelmed by the complexity of rural property regulations until I hired Oasis Ventures. Their methodical approach helped me understand exactly what I was buying and what was possible. Worth every penny for the peace of mind alone."</p>
+                    <p class="testimonial-author">- Rebecca M., Georgia</p>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"As an out-of-state investor, I needed eyes and expertise on the ground. The Oasis team provided detailed reports with insights I would have never discovered remotely. Their negotiation guidance ultimately saved me 18% off the asking price."</p>
+                    <p class="testimonial-author">- Thomas & Elena J., Washington</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Begin Your Property Consultation</h2>
+            <div class="contact-form">
+                <div class="success-message" id="success-message">
+                    Thank you for contacting us! We'll be in touch with you shortly.
+                </div>
+                <form id="landForm" onsubmit="submitForm(event)">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="landType">What type of land are you looking for?</label>
+                        <select id="landType" name="landType" class="form-control" required>
+                            <option value="">-- Select an option --</option>
+                            <option value="Residential">Residential Building Lot</option>
+                            <option value="Agricultural">Agricultural/Farming</option>
+                            <option value="Recreational">Recreational Land</option>
+                            <option value="Commercial">Commercial Development</option>
+                            <option value="Investment">Investment Property</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="location">Preferred Location(s)</label>
+                        <input type="text" id="location" name="location" class="form-control" placeholder="State, County, or specific area" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="budget">Budget Range</label>
+                        <select id="budget" name="budget" class="form-control" required>
+                            <option value="">-- Select an option --</option>
+                            <option value="Under $50,000">Under $50,000</option>
+                            <option value="$50,000-$100,000">$50,000-$100,000</option>
+                            <option value="$100,000-$250,000">$100,000-$250,000</option>
+                            <option value="$250,000-$500,000">$250,000-$500,000</option>
+                            <option value="$500,000-$1,000,000">$500,000-$1,000,000</option>
+                            <option value="Over $1,000,000">Over $1,000,000</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="timeframe">Purchase Timeframe</label>
+                        <select id="timeframe" name="timeframe" class="form-control" required>
+                            <option value="">-- Select an option --</option>
+                            <option value="Immediate">Immediate (0-3 months)</option>
+                            <option value="Short-term">Short-term (3-6 months)</option>
+                            <option value="Medium-term">Medium-term (6-12 months)</option>
+                            <option value="Long-term">Long-term (12+ months)</option>
+                            <option value="Just researching">Just researching options</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Additional Information</label>
+                        <textarea id="message" name="message" class="form-control" placeholder="Please share any specific requirements or questions you have about land acquisition..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn">Submit Request</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <div class="footer-logo">Oasis Ventures LLC</div>
+                    <p>Your independent advisors for informed land decisions across America. We offer objective analysis and expert advocacy throughout your property acquisition journey—never selling land, always protecting your investment.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Our Services</a></li>
+                        <li><a href="#process">Our Process</a></li>
+                        <li><a href="#testimonials">Success Stories</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links contact-info">
+                    <h3>Contact Information</h3>
+                    <p><i>📧</i> Email: perry.oasisventures@gmail.com</p>
+                    <p><i>📞</i> Phone: (302)-406-1248</p>
+                    <p><i>🕙</i> Business Hours: Monday-Friday, 9am-5pm EST</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Oasis Ventures LLC. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            const nav = document.querySelector('nav ul');
+            nav.style.display = nav.style.display === 'flex' ? 'none' : 'flex';
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Form submission
+        function submitForm(event) {
+            event.preventDefault();
+            
+            // In a real implementation, you would use a service like FormSubmit, EmailJS, or your own backend
+            // Here's a simulation for demonstration purposes
+            
+            // Show success message
+            document.getElementById('success-message').style.display = 'block';
+            
+            // Reset form
+            document.getElementById('landForm').reset();
+            
+            // Hide success message after 5 seconds
+            setTimeout(() => {
+                document.getElementById('success-message').style.display = 'none';
+            }, 5000);
+            
+            // For a real implementation, you would send the form data to an endpoint
+            // that would forward it to the specified email address
+            console.log("Form submitted! In a real implementation, this would be sent to perry.oasisventures@gmail.com");
+        }
+    </script>
+</body>
+</html>
